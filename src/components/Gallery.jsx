@@ -15,7 +15,7 @@ const partners = [
   '/images/img2.png',
 ];
 
-export default function TrustedPartnersCarousel() {
+function TrustedPartnersCarousel() {
   return (
     <div className="flex flex-col items-center max-w-screen px-4 mt-10 mx-10">
       <div className="w-full max-w-7xl bg-[#4A224A] rounded-lg shadow-2xl px-6 py-10">
@@ -23,34 +23,21 @@ export default function TrustedPartnersCarousel() {
           Gallery
         </h1>
         <p className="text-2xl text-white font-semibold text-center">
-          Let's Show You A Mere Glimpse Of What We Offer          
+          Let's Show You A Mere Glimpse Of What We Offer
         </p>
-        {/* <Swiper
-          className='-mt-5'
-          modules={[Autoplay, Pagination]}
-          spaceBetween={20}
-          slidesPerView={4}
-          breakpoints={{
-            0: { slidesPerView: 1 },       // 1 slide on small devices
-            768: { slidesPerView: 3 },     // 2 slides on tablets and up
-          }}
+        
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={3}
+          slidesPerView={3}
           loop={true}
-          autoplay={{ delay: 3000 }}
-          pagination={{ clickable: true }}
-        > */}
-          
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={3}
-            slidesPerView={3}
-            loop={true}
-            speed={5000} // Controls how fast it scrolls
-            autoplay={{
-              delay: 0, // No delay between transitions
-              disableOnInteraction: false,
-            }}
-            allowTouchMove={false} // Optional: disables manual swiping
-          >
+          speed={5000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          allowTouchMove={false}
+        >
           {partners.map((logo, idx) => (
             <SwiperSlide
               key={idx}
@@ -68,3 +55,5 @@ export default function TrustedPartnersCarousel() {
     </div>
   );
 }
+
+export default TrustedPartnersCarousel;
